@@ -1,11 +1,12 @@
 status = "";
+object = [];
 
 function setup(){
-    canvas = createCanvas(550, 450);
-    cnavas.position();
+    canvas = createCanvas(500, 400);
+    canvas.position(700, 500);
 
     video = createCapture(VIDEO);
-    video.size(550, 450);
+    video.size(500, 400);
     video.hide();
 }
 
@@ -18,8 +19,13 @@ function start(){
 function modelLoaded(){
     console.log("Model has loaded");
     status = true;
+    objectDetector.detect(video, gotResults);
 }
 
 function draw(){
-    image(video, 0, 0, 550, 450);
+    image(video, 0, 0, 500, 400);
+}
+
+function gotResults(){
+    
 }
